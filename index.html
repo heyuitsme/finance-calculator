@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <script src='main.js'></script>
+    <link rel='stylesheet' href='style.css' type='text/css'>
+    <title>Online Finance Calculator</title>
+  </head>
+
+  <body>
+    <h1>Online Finance Calculator</h1>
+
+    <form class='mainForm'>
+      <input class='input' id='loanAmount' type='number' value='25000' required><br>
+      <input class='input' id='interestRate' type='number' value='4.99' required><br>
+      <input class='input' id='salesTax' type='number' value='13' required><br>
+      <select class='term' id='financeTerm' required>
+        <option id='sixMonths' placeholder='6' value=6>6 Months</option>
+        <option id='oneYear' placeholder='12' value=12>1 Year</option>
+        <option id='twoYears' placeholder='24' value=24>2 Years</option>
+        <option id='threeYears' placeholder='36' value=36>3 Years</option>
+        <option id='fourYears' placeholder='48' value=48>4 Years</option>
+        <option id='fiveYears' placeholder='60' value=60>5 Years</option>
+        <option id='sixYears' placeholder='72' value=72>6 Years</option>
+        <option id='sevenYears' placeholder='84' value=84>7 Years</option>
+        <option id='eightYears' value='96' value=96>8 Years</option>
+      </select><br>
+      <input class='button' type='button' onclick='calculate()' value='Calculate!'><br>
+    </form>
+
+    <p class='output' id='monthlyPayment'></p><br>
+    <p class='output' id='totalInterest'></p><br>
+    <p class='output' id='totalPaid'></p><br>
+
+
+  </body>
+</html>
