@@ -8,29 +8,51 @@
   </head>
 
   <body>
-    <h1>Online Finance Calculator</h1>
 
-    <form class='mainForm'>
-      <input class='input' id='loanAmount' type='number' value='25000' required><br>
-      <input class='input' id='interestRate' type='number' value='4.99' required><br>
-      <input class='input' id='salesTax' type='number' value='13' required><br>
-      <select class='term' id='financeTerm' required>
-        <option id='sixMonths' placeholder='6' value=6>6 Months</option>
-        <option id='oneYear' placeholder='12' value=12>1 Year</option>
-        <option id='twoYears' placeholder='24' value=24>2 Years</option>
-        <option id='threeYears' placeholder='36' value=36>3 Years</option>
-        <option id='fourYears' placeholder='48' value=48>4 Years</option>
-        <option id='fiveYears' placeholder='60' value=60>5 Years</option>
-        <option id='sixYears' placeholder='72' value=72>6 Years</option>
-        <option id='sevenYears' placeholder='84' value=84>7 Years</option>
-        <option id='eightYears' value='96' value=96>8 Years</option>
-      </select><br>
-      <input class='button' type='button' onclick='calculate()' value='Calculate!'><br>
-    </form>
+    <div id='mainContainer'>
+      <div id='headContainer'>
+        <h1>Fancy Online Finance Calculator</h1>
+      </div>
+      <div id='imgContainer'>
+        <img src='dollar.png' id='dollarImg'>
+      </div>
+      <div id='formContainer'>
+        <form class='mainForm'>
+          <p id='loanText'>Loan Amount:</p>
+          <input class='input' id='amount' type='number' placeholder='25000' required>
+          <p id='interestText'>Interest Rate:</p>
+          <input class='input' id='interestRate' type='number' placeholder='4.99' required>
+          <p id='taxText'>Sales Tax:</p>
+          <input class='input' id='salesTax' type='number' placeholder='13' required>
+          <p id='financeText'>Finance Term:</p>
+          <select class='input' id='financeTerm' required>
+            <option id='sixMonths' value=6>6 Months</option>
+            <option id='oneYear' value=12>1 Year</option>
+            <option id='twoYears' value=24>2 Years</option>
+            <option id='threeYears' value=36>3 Years</option>
+            <option id='fourYears' value=48>4 Years</option>
+            <option id='fiveYears' value=60>5 Years</option>
+            <option id='sixYears' value=72>6 Years</option>
+            <option id='sevenYears' value=84>7 Years</option>
+            <option id='eightYears' value=96>8 Years</option>
+          </select>
+          <br><br>
+          <select class='input' id='invertChoice' onchange='firstInput()'>
+            <option id='monthCalc' value='monthCalc'>Calculate Monthly Payment</option>
+            <option id='totCalc' value='totCalc'>Calculate Total Obligation</option>
+          </select>
+          <br><br>
+          <input class='button' id='calcBtn' type='button' onclick='findAmount()' value='Calculate!'><br>
 
-    <p class='output' id='monthlyPayment'></p><br>
-    <p class='output' id='totalInterest'></p><br>
-    <p class='output' id='totalPaid'></p><br>
+        </form>
+      </div>
+      <div id='messageContainer'>
+        <p class='output' id='monthlyPayment'></p>
+        <p class='output' id='totalInterest'></p>
+        <p class='output' id='totalPaid'></p>
+      </div>
+    </div>
+
 
 
   </body>

@@ -1,0 +1,31 @@
+/*stylesheet*/
+html {
+  font-family: 'Arial Black', sans-serif;
+  color: #0071bc;
+}
+
+#mainContainer {
+  margin: auto;
+  text-align: center;
+  border: 10px solid #0071bc;
+  border-radius: 5px;
+  padding: auto 20px 15px 20px;
+  width: 60%;
+  height: 50%;
+}
+
+#headContainer {
+  width: auto;
+}
+
+#dollarImg {
+  height: 15%;
+  width: 15%;
+}
+
+.input {
+  margin: auto;
+  width: auto;
+  text-align: center;
+  border-radius: 3px;
+}
