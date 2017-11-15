@@ -36,14 +36,19 @@ function calculate() {
   var tax = (document.getElementById('salesTax').value)/100;
   var principal = loanAmt*(1+tax);
 
-  var monthlyPay = ((intRate/12)*principal)/(1-((1+intRate/12)**(-1*(finTerm))));
+  if(tax != null) {
+    var monthlyPay = ((intRate/12)*principal)/(1-((1+intRate/12)**(-1*(finTerm))));
+  } else if(tax == null) {
+    var monthlyPay = ((intRate/12)*loanAmt)/(1-((1+intRate/12)**(-1*(finTerm))));
+  }
+
 
   function disOutput() {
     function monthlyMess() {
       return 'Monthly payment = $' + monthlyPay.toFixed(2);
     }
     function intMess() {
-      var totalInterestPaid = ((monthlyPay * finTerm) - loanAmt);
+      var totalInterestPaid = ((monthlyPay * finTerm) - (loanAmt*(1+tax)));
       return 'Total interest paid = $' + totalInterestPaid.toFixed(2);
     }
     function totMess() {
@@ -65,15 +70,19 @@ function invertCalc() {
   var finTerm = document.getElementById('financeTerm').value;
   var tax = (document.getElementById('salesTax').value)/100;
 
-  var loanAmt = ((monthlyPay * (1-(1+intRate/12)**(-1*finTerm)))/(intRate/12))/(1+tax);
-  console.log(loanAmt);
+  if(tax != null) {
+    var loanAmt = ((monthlyPay * (1-(1+intRate/12)**(-1*finTerm)))/(intRate/12))/(1+tax);
+  } else if(tax == null) {
+    var loanAmt = ((monthlyPay * (1-(1+intRate/12)**(-1*finTerm)))/(intRate/12));
+  }
+
 
   function disOutput() {
     function loanMess() {
       return 'Loan amount = $' + loanAmt.toFixed(2);
     }
     function intMess() {
-      var totalInterestPaid = ((monthlyPay * finTerm) - loanAmt);
+      var totalInterestPaid = ((monthlyPay * finTerm) - (loanAmt*(1+tax)));
       return 'Total interest paid = $' + totalInterestPaid.toFixed(2);
     }
     function totMess() {
