@@ -1,13 +1,14 @@
 /*stylesheet*/
 html {
   font-family: 'Arial Black', sans-serif;
-  color: #0071bc;
+  color: #ffffff;
 }
 
 #mainContainer {
   margin: auto;
+  background-color: #0071bc;
   text-align: center;
-  border: 10px solid #0071bc;
+  border: 10px solid #fbb03b;
   border-radius: 5px;
   padding: auto 20px 15px 20px;
   width: 60%;
@@ -28,4 +29,22 @@ html {
   width: auto;
   text-align: center;
   border-radius: 3px;
+}
+
+.button {
+  border-radius: 3px;
+  border: 5px solid #ffffff;
+  font-family: 'Arial Black', sans-serif;
+  color: #ffffff;
+  background-color: #0071bc;
+  padding: 10px 20px 10px 20px;
+}
+
+.button:hover {
+  border-radius: 3px;
+  border: 5px solid #ffffff;
+  font-family: 'Arial Black', sans-serif;
+  color: #0071bc;
+  background-color: #ffffff;
+  padding: 10px 20px 10px 20px;
 }
